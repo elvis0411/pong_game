@@ -6,6 +6,7 @@ class Gamerpaddle():
         
     def __init__(self,screen_width,screen_height):        
         from_the_bondary = 10
+        self.movesize = 20
         self.height = screen_height
         self.paddle_height = 2
         self.paddle = Turtle("square")
@@ -19,7 +20,7 @@ class Gamerpaddle():
         ycor = self.paddle.ycor()
         print(ycor)
         if ycor < (self.height - self.paddle_height*10):
-            self.paddle.goto(xcor,ycor+self.paddle_height*10)
+            self.paddle.goto(xcor,ycor+self.paddle_height*self.movesize)
     
     def move_down(self): 
         print("move down")      
@@ -27,4 +28,4 @@ class Gamerpaddle():
         ycor = self.paddle.ycor()
         print(ycor)
         if ycor > (-self.height+ self.paddle_height*10):
-            self.paddle.goto(xcor,ycor-10)
+            self.paddle.goto(xcor,ycor-self.movesize)
